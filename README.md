@@ -142,9 +142,20 @@ After I successfully establish the SSH connection, I run the following commands 
   
 ![sudo](https://user-images.githubusercontent.com/122367884/212873076-9e60cd0a-d3a5-4ac3-9174-db68f071aabf.jpg)
 
- #### finally I start the web server.
+#### finally I start the web server.
   
 ![start](https://user-images.githubusercontent.com/122367884/212873693-2cc74866-d44d-49c3-b42a-9fd12588ab76.jpg)
 
+## Step 6. Visit your Website and configure the Wordpress setting
   
-  
+#### In this section, I complete the WordPress installation
+
+* First, I create a new user in AWS that will use the WordPress plugin for Amazon S3.
+* I enter Wordpress as the user name.
+* In the Select AWS access type section, I select Access key - Programmatic access.
+* I check the Attach existing policies directly box at the top of the next page.
+* I search for CloudFrontFullAccess and select it.
+* I do the same for AmazonS3FullAccess.
+* Now I open in the EC2 instances the Public IPv4 DNS
+
+![wordpress](https://user-images.githubusercontent.com/122367884/212889962-edc3f2b3-6b7f-4622-b641-43b98405dadb.jpg)

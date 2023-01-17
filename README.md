@@ -33,7 +33,7 @@ In this project I will first deploy the VPC using CloudFormation template, then 
 
 ![Username and Password](https://user-images.githubusercontent.com/122367884/212841632-7cb85c35-ad6b-49b4-8cc8-ff9a50fee9da.jpg)
 
-###Now I continue in the Connectivity section
+### Now I continue in the Connectivity section
 
 * for the Virtual Private Cloud (VPC), I selected the Vpc / vpc-stack option, i.e. the VPC created via CloudFormation in the previous step.
 * I am creating a new VPC Security Group
@@ -52,4 +52,9 @@ In this project I will first deploy the VPC using CloudFormation template, then 
 * Instance type: t2.micro (should also be preselected) Note: Care should be taken here to only use instance types that are marked as "Free tier eligible"   to avoid additional charges to your AWS account.
 
 ![EC2 instance](https://user-images.githubusercontent.com/122367884/212844900-a665550f-c551-48db-9086-b02771f5a3dc.jpg)
+
+* I create a new Key pair with the name wordpress
+
+![Key Pair](https://user-images.githubusercontent.com/122367884/212848701-5e974f02-5ef0-49c6-bc92-50709526d58c.jpg)
+
 

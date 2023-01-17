@@ -90,10 +90,45 @@ and connect to the EC2 instance via SSH.
 
 After I successfully establish the SSH connection, I run the following commands to install Apache (web server) and MySQL on your instance:
 
-´´´
-sudo yum install -y httpd
-sudo yum install -y mysql
-´´´
+![sudo install](https://user-images.githubusercontent.com/122367884/212864991-d331fc11-0e4d-4125-8cef-6121e7dc7827.jpg)
 
+#### Now I set the endpoint of the database I created earlier as an environment variable so that the wordpress instance knows  where to connect to. The      endpoint can be found in the RDS console, where I select the WordPress database and then copy the value shown as the endpoint.
 
+* The address is then set as an environment variable with the following command (I replace it with the value copied above)
 
+![export](https://user-images.githubusercontent.com/122367884/212867297-87bc8970-62c6-4aa4-91a8-63f12604145b.jpg)
+
+#### Next, I connect to the database using the username and master password I set earlier when I created the database. so I replace the placeholders with those.
+
+![mysql](https://user-images.githubusercontent.com/122367884/212867833-8b2d1e9c-9e38-4e67-afba-7e4a0282f390.jpg)
+
+#### I am now connected to the database (a welcome message should be seen). now I create a new database for wordpress and grant the necessary permissions: 
+
+![berechtigungen](https://user-images.githubusercontent.com/122367884/212868414-8be1ae3b-dcf3-49d2-918c-5b42c6fa8d86.jpg)
+
+#### Using the exit command above, I am now back on the EC2 instance. Now I download Wordpress and unzip it.
+
+![wget](https://user-images.githubusercontent.com/122367884/212868755-8ad09076-d385-4541-b562-d453e5f0c185.jpg)
+
+#### I change to the WordPress folder and save the default configuration file.
+
+![cd wordpress](https://user-images.githubusercontent.com/122367884/212869100-5fd043fb-65a1-4c12-9f15-505a5f94db51.jpg)
+
+#### Danach bearbeite ich die Datei wp-config.php mit nano:
+
+![nano](https://user-images.githubusercontent.com/122367884/212869316-7c496bfd-b1cd-4fee-b91e-2c1e2c029e4a.jpg)
+
+#### Now I replace the first three placeholder values with the following values:
+
+* DB_NAME: 'wordpress'
+* DB_USER: 'wordpress'
+* DB_PASSWORD: 'wordpress-pass'
+
+![placeholder](https://user-images.githubusercontent.com/122367884/212870001-a89aa13a-4bd7-4727-8750-d8464e4d644b.jpg)
+
+#### For the database host, I use the endpoint address I copied earlier
+
+* DB_HOST: '<replace-me>'
+  
+#### I visit [this link](https://api.wordpress.org/secret-key/1.1/salt/) which gives me unique keys and salt information for cryptographic operations of wordpress instance. Replace the above block with the information from the website.
+then I copy the snippet below that configures a required plugin.

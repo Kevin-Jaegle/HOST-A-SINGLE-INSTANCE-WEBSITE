@@ -33,7 +33,7 @@ In this project I will first deploy the VPC using CloudFormation template, then 
 
 ![Username and Password](https://user-images.githubusercontent.com/122367884/212841632-7cb85c35-ad6b-49b4-8cc8-ff9a50fee9da.jpg)
 
-##### Now I continue in the Connectivity section
+#### Now I continue in the Connectivity section
 
 * for the Virtual Private Cloud (VPC), I selected the Vpc / vpc-stack option, i.e. the VPC created via CloudFormation in the previous step.
 * I am creating a new VPC Security Group
@@ -56,5 +56,43 @@ In this project I will first deploy the VPC using CloudFormation template, then 
 * I create a new Key pair with the name wordpress
 
 ![Key Pair](https://user-images.githubusercontent.com/122367884/212848701-5e974f02-5ef0-49c6-bc92-50709526d58c.jpg)
+
+* For VPC, I select "Vpc/vpc-stack" (the VPC we've created earlier)
+* For Subnet, I choose "PublicSubnet0"
+* For Sevurity group name and the description field, I enter public-instance-sg
+* I then start the Instance
+
+![Netzwerkeinstellungen](https://user-images.githubusercontent.com/122367884/212850354-3d7201bf-ac36-4637-b07f-c9dc845bf073.jpg)
+
+## Step 4, Modify Security groups of RDS and EC2 Instance
+
+#### In this section, I will change the Security groups of the EC2 instance and the MySQl database to ensure that both systems can communicate with each      other.
+
+* I select the Security group public-instance-sg and Edit 2 new Inbound rules
+* For Type I select MySQL/Aurora
+* For Source I select db-sg and add the rule
+* Then I add a new rule with the type HTTP 
+* For Source I select db-sg and save the rules
+
+* I select the Security group db-sg and Edit a new Inbound rule
+* For Type I select MySQL/Aurora
+* For Source I selct public-instance-sg and save the rule
+
+## Step 5. Set up the wordpress environment
+
+#### In this section, I will connect to the EC2 instance, install and configure Wordpress (and some prerequisites).
+
+Note: In step 2, I could have just selected an already installed Wordpress image from the AWS Marketplace. That's also a good option, but here I'm going the manual installation route so that you understand the various steps involved in setting up a WordPress instance from scratch.
+
+I Call up the EC2 console.
+Select the instance with the name wordpress.
+and connect to the EC2 instance via SSH.
+
+After I successfully establish the SSH connection, I run the following commands to install Apache (web server) and MySQL on your instance:
+
+´´´
+sudo yum install -y httpd
+sudo yum install -y mysql
+
 
 

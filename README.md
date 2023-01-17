@@ -93,6 +93,7 @@ After I successfully establish the SSH connection, I run the following commands 
 ´´´
 sudo yum install -y httpd
 sudo yum install -y mysql
+´´´
 
 
 

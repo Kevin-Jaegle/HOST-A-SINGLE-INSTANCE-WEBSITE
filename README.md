@@ -157,5 +157,11 @@ After I successfully establish the SSH connection, I run the following commands 
 * I search for CloudFrontFullAccess and select it.
 * I do the same for AmazonS3FullAccess.
 * Now I open in the EC2 instances the Public IPv4 DNS
+* On the setup page I choose a name for the website, a username, a password and my email and then click on Install WordPress
 
 ![wordpress](https://user-images.githubusercontent.com/122367884/212889962-edc3f2b3-6b7f-4622-b641-43b98405dadb.jpg)
+  
+#### After a few seconds I see the message Success! I click Log In to continue.
+     I enter my username and password and click the Log In button to display the WordPress dashboard.
+  
+

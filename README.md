@@ -131,4 +131,20 @@ After I successfully establish the SSH connection, I run the following commands 
 * DB_HOST: '<replace-me>'
   
 #### I visit [this link](https://api.wordpress.org/secret-key/1.1/salt/) which gives me unique keys and salt information for cryptographic operations of wordpress instance. Replace the above block with the information from the website.
-then I copy the snippet below that configures a required plugin.
+  
+![define](https://user-images.githubusercontent.com/122367884/212872156-06406ec8-13e4-4bb9-9739-44282ef5ba40.jpg)
+
+#### then I copy the snippet below that configures a required plugin.
+  
+![W3tc](https://user-images.githubusercontent.com/122367884/212872277-d6c5a27b-d634-4f4a-a85d-2ce5cd5ee082.jpg)
+
+#### Now that Wordpress is configured, I install a few more dependencies, copy the Wordpress files to the web server directory, and make sure the web        server (Apache) has the appropriate permissions for the Wordpress files.  
+  
+![sudo](https://user-images.githubusercontent.com/122367884/212873076-9e60cd0a-d3a5-4ac3-9174-db68f071aabf.jpg)
+
+ #### finally I start the web server.
+  
+![start](https://user-images.githubusercontent.com/122367884/212873693-2cc74866-d44d-49c3-b42a-9fd12588ab76.jpg)
+
+  
+  
